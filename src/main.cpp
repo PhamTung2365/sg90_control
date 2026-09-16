@@ -25,7 +25,7 @@ unsigned long auto_lock_at = 0;
 String last_request_id;
 
 void publish_state(const char* status) {
-  StaticJsonDocument<160> document;
+  JsonDocument document;
   document["status"] = status;
   document["online"] = true;
   char payload[192];
@@ -34,7 +34,7 @@ void publish_state(const char* status) {
 }
 
 void handle_command(const byte* payload, unsigned int length) {
-  StaticJsonDocument<384> document;
+  JsonDocument document;
   DeserializationError error = deserializeJson(document, payload, length);
   if (error) {
     Serial.printf("Invalid MQTT JSON: %s\n", error.c_str());
