@@ -5,10 +5,11 @@
 
 const char* ssid = "Penrose";
 const char* wifi_password = "until2365";
+// Raspberry Pi LAN address running Mosquitto. Update if the Pi's DHCP address changes.
 const char* mqtt_server = "10.195.134.44";
 const int mqtt_port = 1883;
 const char* mqtt_user = "esp32";
-const char* mqtt_password = "THAY_BANG_MQTT_DEVICE_PASSWORD";
+const char* mqtt_password = "sg90esp32";
 
 const char* command_topic = "smartlock/front-door/command";
 const char* state_topic = "smartlock/front-door/state";
